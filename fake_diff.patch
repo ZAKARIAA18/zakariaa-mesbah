@@ -1,0 +1,56 @@
+﻿diff --git a/index.html b/index.html
+index 10d7401..a65f4e8 100644
+--- a/index.html
++++ b/index.html
+@@ -209,41 +209,72 @@
+     #hero {
+       position: relative;
+       min-height: 100vh;
+       display: flex;
+       align-items: center;
+       overflow: hidden;
+       padding-top: 68px;
+     }
+     .hero-inner {
+       position: relative;
+       z-index: 1;
+       max-width: 800px;
++      display: flex;
++      align-items: center;
++      gap: 56px;
+     }
++    .hero-photo-wrap {
++      flex-shrink: 0;
++      perspective: 800px;
++    }
++    .hero-photo {
++      width: 270px;
++      height: 270px;
++      border-radius: 50%;
++      object-fit: cover;
++      border: 3px solid var(--cyan);
++      box-shadow:
++        0 0 0 6px rgba(0,212,255,.15),
++        0 0 30px rgba(0,212,255,.55),
++        0 0 80px rgba(0,212,255,.25),
++        0 20px 60px rgba(0,0,0,.6);
++      transform: rotateY(-12deg) rotateX(4deg);
++      transition: transform .5s cubic-bezier(.4,0,.2,1), box-shadow .5s ease;
++      will-change: transform;
++    }
++    .hero-photo-wrap:hover .hero-photo {
++      transform: rotateY(0deg) rotateX(0deg) scale(1.04);
++      box-shadow:
++        0 0 0 8px rgba(0,212,255,.25),
++        0 0 50px rgba(0,212,255,.8),
++        0 0 120px rgba(0,212,255,.35),
++        0 30px 80px rgba(0,0,0,.5);
++    }
++    .hero-text { flex: 1; }
+     .hero-tag {
+       display: inline-flex;
+       ...
+     }
++      .hero-inner { flex-direction: column; gap: 32px; text-align: center; }
++      .hero-photo { width: 200px; height: 200px; }
++      .hero-actions { justify-content: center; }
